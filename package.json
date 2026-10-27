@@ -1,0 +1,37 @@
+{
+  "name": "subscription-usage",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Menu bar app showing Claude subscription usage across Silas's accounts.",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json && tsc -p web",
+    "build": "vite build web && node scripts/build.mjs",
+    "package": "pnpm build && node scripts/package.mjs",
+    "dev": "pnpm build && electron build/app"
+  },
+  "dependencies": {
+    "@northlight-systems/cloud-ui": "0.21.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "vite": "^8.3.0",
+    "electron": "45.0.0",
+    "@electron/packager": "20.3.0",
+    "esbuild": "0.28.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  }
+}

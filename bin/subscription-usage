@@ -1,0 +1,4 @@
+#!/bin/sh
+# Shows the Claude Usage popover. Opening the running menu bar app again shows its popover;
+# if the app is not running, this starts it.
+exec open -a "Claude Usage"
