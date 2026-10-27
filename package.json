@@ -1,14 +1,20 @@
 {
-  "name": "subscription-usage",
-  "version": "0.0.0",
+  "name": "claude-usage",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Menu bar app showing Claude subscription usage across Silas's accounts.",
+  "description": "macOS menu bar app showing Claude subscription usage across several accounts.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CaptainCrouton89/claude-usage.git"
+  },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json && tsc -p web",
     "build": "vite build web && node scripts/build.mjs",
+    "dev": "pnpm build && electron build/app",
     "package": "pnpm build && node scripts/package.mjs",
-    "dev": "pnpm build && electron build/app"
+    "release": "pnpm build && node scripts/package.mjs --release"
   },
   "dependencies": {
     "@northlight-systems/cloud-ui": "0.21.1",

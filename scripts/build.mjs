@@ -17,8 +17,9 @@ fs.cpSync(path.join(root, "web/dist"), path.join(out, "web"), { recursive: true 
 for (const file of fs.readdirSync(path.join(root, "assets"))) {
   if (file.startsWith("tray")) fs.copyFileSync(path.join(root, "assets", file), path.join(out, file));
 }
+const { version } = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
 fs.writeFileSync(
   path.join(out, "package.json"),
-  JSON.stringify({ name: "claude-usage", productName: "Claude Usage", version: "1.0.0", main: "main.cjs" }, null, 2),
+  JSON.stringify({ name: "claude-usage", productName: "Claude Usage", version, main: "main.cjs" }, null, 2),
 );
 console.log(`built ${path.relative(root, out)}`);
